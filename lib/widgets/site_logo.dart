@@ -10,7 +10,7 @@ class SiteLogo extends StatelessWidget {
     return    GestureDetector(
                 onTap: onTap,
                 child: const Text(
-                  "EU", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,
+                  "Eruel U.", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,
                    decoration: TextDecoration.underline,
                     color: CustomColor.yellowSecondary),),
               );
