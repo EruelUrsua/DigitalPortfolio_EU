@@ -1,13 +1,18 @@
 import 'package:digital_portfolio_ursua/constants/colors.dart';
 import 'package:digital_portfolio_ursua/constants/size.dart';
+import 'package:digital_portfolio_ursua/constants/skill_items.dart';
+import 'package:digital_portfolio_ursua/utils/project_utils.dart';
 import 'package:digital_portfolio_ursua/widgets/drawer_mobile.dart';
 import 'package:digital_portfolio_ursua/widgets/header_desktop.dart';
 import 'package:digital_portfolio_ursua/widgets/header_mobile.dart';
 import 'package:digital_portfolio_ursua/widgets/main_desktop.dart';
 import 'package:digital_portfolio_ursua/widgets/main_mobile.dart';
+import 'package:digital_portfolio_ursua/widgets/project_card.dart';
+import 'package:digital_portfolio_ursua/widgets/projects_section.dart';
+import 'package:digital_portfolio_ursua/widgets/skills_desktop.dart';
+import 'package:digital_portfolio_ursua/widgets/skills_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'dart:ui';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,20 +49,43 @@ class _HomePageState extends State<HomePage> {
             ),
             if(constraints.maxWidth>=KMinDesktopWidth)
             const MainDesktop() else
-            MainMobile(),
+            const MainMobile(),
           
         
               //Skills
               Container(
-                height: 500,
-                width: double.maxFinite,
-                 color: Colors.blueGrey,
+                //height: 500,
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                 color: CustomColor.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //title
+                    const Text("Skills",
+                    style: TextStyle(fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColor.whitePrimary,
+                    ),
+                    ),
+                      const SizedBox(height: 50),
+
+                    //platform and skills
+                    if(constraints.maxWidth>=KMedDesktopWidth)
+                    const SkillsDesktop() else
+                    const SkillsMobile(),
+
+                  ],
+                ),
+
+
               ),
+
+              const SizedBox(height: 30),
               //Projects
-               Container(
-                height: 500,
-                width: double.maxFinite,
-              ),
+               const ProjectsSection(),
+
+              
               // Contact
                Container(
                 height: 500,
