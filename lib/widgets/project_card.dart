@@ -52,19 +52,15 @@ class ProjectCardWidget extends StatelessWidget {
                   horizontal: 12,
                   vertical: 10,
                 ),
-            child: Row(
-                children: [          
-                  const Text("Click icon to preview project: ", style: TextStyle(color: CustomColor.yellowSecondary, 
-                  fontSize: 10,),
+            child: Center(
+                child: InkWell(
+                  onTap: () {
+                    js.context.callMethod("open", [project.webLink]);
+                  },
+                  child: const Text("Click here to preview project", style: TextStyle(color: CustomColor.yellowSecondary, 
+                  fontSize: 11,),
                   ),
-                  const Spacer(),
-                  if(project.webLink!=null)
-                InkWell(
-                  onTap: (){
-                      js.context.callMethod("open", [project.webLink]);
-                  },                         
-                  child: Image.asset("assets/web_icon.png", width: 17,)),
-                ],
+                ),
     
             ),
             ),

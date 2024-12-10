@@ -32,7 +32,7 @@ class ContactSection extends StatelessWidget {
                     const SizedBox(height: 15),
                            ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 700),
-                             child: CustomTextField(
+                             child: const CustomTextField(
                               hintText: "Message",
                               maxLines: 16,
                                                        ),
