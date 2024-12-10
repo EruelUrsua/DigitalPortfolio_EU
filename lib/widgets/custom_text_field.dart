@@ -13,7 +13,7 @@ final String? hintText;
       maxLines: maxLines,
 
                             style: const TextStyle(color: CustomColor.scaffoldBg,),
-                            decoration: InputDecoration(contentPadding: EdgeInsets.all(16),
+                            decoration: InputDecoration(contentPadding: const EdgeInsets.all(16),
                             filled: true,
                             fillColor: CustomColor.whiteSecondary,
                             focusedBorder: getInputBorder,

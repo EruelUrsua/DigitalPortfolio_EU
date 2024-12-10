@@ -19,7 +19,7 @@ final Function (int) onNavMenuTap;
               SiteLogo(onTap: () {
                 
               },),
-              Spacer(),
+              const Spacer(),
               for(int i = 0; i<navTitles.length; i++)
               Padding(
                 padding: const EdgeInsets.only(right: 20),
