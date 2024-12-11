@@ -13,6 +13,7 @@ import 'package:digital_portfolio_ursua/widgets/skills_desktop.dart';
 import 'package:digital_portfolio_ursua/widgets/skills_mobile.dart';
 import 'package:flutter/material.dart';
 import 'dart:js' as js;
+import 'dart:html' as html;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,7 +25,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey <ScaffoldState>();
   final scrollController = ScrollController();
-  final List<GlobalKey> navbarKeys = List.generate(4, (index) => GlobalKey());
+  final List<GlobalKey> navbarKeys = List.generate(5, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -116,12 +117,30 @@ class _HomePageState extends State<HomePage> {
     void scrollToSection (int navIndex){
       if (navIndex == 4){
         //Open 
-        js.context.callMethod('open', [SnsLinks.linkedin]);
+       // js.context.callMethod('open', [SnsLinks.linkedin]);
+       ProjectsSection();
+      return;
+      }
+      else if (navIndex == 5) {
+        //Open 
+      
+      downloadFile("assets/ursua_resume.pdf");
+
+
+
+
       return;
       }
       final key = navbarKeys[navIndex];
       Scrollable.ensureVisible(
         key.currentContext!, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut); 
+
+    }
+
+    downloadFile(url) {
+       html.AnchorElement anchorElement = new html.AnchorElement (href : url);
+       anchorElement.download = "Ursua_Eruel_Resume";
+       anchorElement.click();
 
     }
 }
