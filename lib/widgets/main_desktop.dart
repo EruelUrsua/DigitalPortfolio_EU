@@ -1,5 +1,6 @@
 import 'package:digital_portfolio_ursua/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -35,8 +36,8 @@ class MainDesktop extends StatelessWidget {
                         ),
                         onPressed: (){
                          
-
-                        }, child: const Text("Check My Resume", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold),
+                            downloadFile("assets/ursua_resume.pdf");
+                        }, child: const Text("Check Out My Resume", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold),
                       ),
                       ),
                       )
@@ -49,4 +50,10 @@ class MainDesktop extends StatelessWidget {
             ),
             );
   }
+   downloadFile(url) {
+       html.AnchorElement anchorElement = new html.AnchorElement (href : url);
+       anchorElement.download = "Ursua_Eruel_Resume";
+       anchorElement.click();
+
+    }
 }

@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 import 'dart:js' as js;
 
 class ContactSection extends StatelessWidget {
-  const ContactSection({super.key});
+ ContactSection({super.key});
 
+final TextEditingController message = new TextEditingController();
+final TextEditingController name = new TextEditingController();
+final TextEditingController email = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return    Container(
@@ -32,7 +35,8 @@ class ContactSection extends StatelessWidget {
                     const SizedBox(height: 15),
                            ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 700),
-                             child: const CustomTextField(
+                             child: CustomTextField(
+                              controller: message,
                               hintText: "Message",
                               maxLines: 16,
                                                        ),
@@ -49,7 +53,28 @@ class ContactSection extends StatelessWidget {
                              style: ElevatedButton.styleFrom(
                           backgroundColor: CustomColor.yellowPrimary,
                         ),
-                             onPressed: (){}, child: const Text("Get in touch", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold
+                             onPressed: (){
+
+                              name.clear();
+                              email.clear();
+                              message.clear();
+                              
+                              showDialog(context: context, 
+                              builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(onPressed: () {
+                                    Navigator.of(context).pop();
+                                  }, child: const Text("Close"))
+                                ],
+                                title: const Text("Success!"),
+                                contentPadding: const EdgeInsets.all(15),
+                                content: const Text("Your message has been sent!", textAlign: TextAlign.center,),
+                                icon: Image.asset("assets/check-512.png", height: 70, width: 70,),
+                                
+                              ));
+
+
+                             }, child: const Text("Get in touch", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold
                              ),
                              ),
                              ),
@@ -92,16 +117,18 @@ const SizedBox(height: 30),
   }
 
    Row buildNameEmailFieldDesktop(){
-    return const Row(
+    return Row(
                         children: [
                           Flexible(
                             child: CustomTextField(
+                              controller: name,
                               hintText: "Name",
                             ),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Flexible(
                             child: CustomTextField(
+                              controller: email,
                               hintText: "Email",
                             ),
                           ),
@@ -110,16 +137,18 @@ const SizedBox(height: 30),
    }
 
     Column buildNameEmailFieldMobile(){
-    return const Column(
+    return Column(
                         children: [
                           Flexible(
                             child: CustomTextField(
+                              controller: name,
                               hintText: "Name",
                             ),
                           ),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                           Flexible(
                             child: CustomTextField(
+                              controller: email,
                               hintText: "Email",
                             ),
                           ),

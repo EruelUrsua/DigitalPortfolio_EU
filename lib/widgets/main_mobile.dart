@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import 'dart:html' as html;
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -44,8 +45,13 @@ class MainMobile extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: CustomColor.yellowPrimary,
                         ),
-                        onPressed: (){}, child: const Text("Check My Resume", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold),
-                      ),
+                        onPressed: (){
+
+
+                              downloadFile("assets/ursua_resume.pdf");
+
+                        }, child: const Text("Check Out My Resume", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold, fontSize: 13),
+                            textAlign: TextAlign.center, ),
                       ),
                       ),
 
@@ -56,4 +62,10 @@ class MainMobile extends StatelessWidget {
               
             );
   }
+  downloadFile(url) {
+       html.AnchorElement anchorElement = new html.AnchorElement (href : url);
+       anchorElement.download = "Ursua_Eruel_Resume";
+       anchorElement.click();
+
+    }
 }
