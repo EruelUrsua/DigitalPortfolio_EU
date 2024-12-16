@@ -1,7 +1,6 @@
 import 'package:digital_portfolio_ursua/constants/colors.dart';
 import 'package:digital_portfolio_ursua/constants/footer.dart';
 import 'package:digital_portfolio_ursua/constants/size.dart';
-import 'package:digital_portfolio_ursua/constants/sns_links.dart';
 import 'package:digital_portfolio_ursua/widgets/contact_section.dart';
 import 'package:digital_portfolio_ursua/widgets/drawer_mobile.dart';
 import 'package:digital_portfolio_ursua/widgets/header_desktop.dart';
@@ -117,8 +116,8 @@ class _HomePageState extends State<HomePage> {
     void scrollToSection (int navIndex){
       if (navIndex == 4){
         //Open 
-       // js.context.callMethod('open', [SnsLinks.linkedin]);
-       ProjectsSection();
+       js.context.callMethod('open', ['https://eruelfrancisursua.wixsite.com/eruelu']);
+       
       return;
       }
       else if (navIndex == 5) {

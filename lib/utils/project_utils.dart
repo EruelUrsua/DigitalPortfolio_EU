@@ -35,7 +35,7 @@ List<ProjectUtils> hackathonProjectUtils = [
       image: 'assets/projects/healthlink.png',
       title: 'HealthLink',
       subtitle:
-          'This is a mobile app that provides patients better diagnosis and service through language accesibility',
+          'This is a mobile app that provides patients better diagnosis and service through language accesibility.',
       webLink:
           'https://github.com/EruelUrsua/solcha2024',
   ),
@@ -43,14 +43,14 @@ List<ProjectUtils> hackathonProjectUtils = [
     image: 'assets/projects/helpjuan.png',
     title: 'HelpJuan',
     subtitle:
-        'This is a mobile app that improves the disaster response of provinces',
+        'This is a mobile app that improves the disaster response of provinces.',
     webLink:
         'https://github.com/EruelUrsua/HelpJuan',
   ),
   ProjectUtils(
     image: 'assets/projects/trashscan.png',
     title: 'TrashScan',
-    subtitle: 'This is a UI design for a mobile app that aims to promote proper waste disposal',
+    subtitle: 'This is a UI design for a mobile app that aims to promote proper waste disposal.',
     webLink:
         'https://www.figma.com/design/IE3UHAVrq4dRvqnYzOFdwE/Hackathon?node-id=0-1&t=jntw7yO9OcLdVjmB-1',
   ),
@@ -63,14 +63,14 @@ List<ProjectUtils> schoolProjectUtils = [
     image: 'assets/projects/justpark.png',
     title: 'JustPark',
     subtitle:
-        'This is a UI design for a parking locator mobile app',
+        'This is a UI design for a parking locator mobile app.',
     webLink: 'https://www.figma.com/design/usVJbumVZCCAuiayyb7jG3/Midterms-UI%2FUX?node-id=126-2&t=TnDePDLMfoDiWUlQ-1',
   ),
   ProjectUtils(
     image: 'assets/projects/Homehub.png',
     title: 'HomeHub',
     subtitle:
-        'This is a progressive web app that connects home owners and home products and services providers',
+        'This is a progressive web app that connects home owners and home products and services providers.',
     webLink: 'https://github.com/EruelUrsua/Homehub',
   ),
 ];
