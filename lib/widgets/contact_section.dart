@@ -55,10 +55,28 @@ final TextEditingController email = new TextEditingController();
                         ),
                              onPressed: (){
 
-                              name.clear();
+                              if (name.text == "" || email.text == "" || message.text == "")
+                              {
+
+                              showDialog(context: context, 
+                              builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(onPressed: () {
+                                    Navigator.of(context).pop();
+                                  }, child: const Text("Close"))
+                                ],
+                                title: const Text("Error"),
+                                contentPadding: const EdgeInsets.all(15),
+                                content: const Text("Please fill in all of the fields", textAlign: TextAlign.center,),
+                                icon: Image.asset("assets/error.png", height: 70, width: 70,),
+                                
+                              ));
+                              }
+
+                              else{
+                                 name.clear();
                               email.clear();
                               message.clear();
-                              
                               showDialog(context: context, 
                               builder: (context) => AlertDialog(
                                 actions: [
@@ -72,8 +90,7 @@ final TextEditingController email = new TextEditingController();
                                 icon: Image.asset("assets/check-512.png", height: 70, width: 70,),
                                 
                               ));
-
-
+                              }
                              }, child: const Text("Get in touch", style: TextStyle(color: CustomColor.whitePrimary, fontWeight: FontWeight.bold
                              ),
                              ),
