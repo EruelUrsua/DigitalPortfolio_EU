@@ -63,7 +63,7 @@ class MainMobile extends StatelessWidget {
             );
   }
   downloadFile(url) {
-       html.AnchorElement anchorElement = new html.AnchorElement (href : url);
+       html.AnchorElement anchorElement = html.AnchorElement (href : url);
        anchorElement.download = "Ursua_Eruel_Resume";
        anchorElement.click();
 

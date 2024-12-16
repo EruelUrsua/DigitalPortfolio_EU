@@ -8,9 +8,9 @@ import 'dart:js' as js;
 class ContactSection extends StatelessWidget {
  ContactSection({super.key});
 
-final TextEditingController message = new TextEditingController();
-final TextEditingController name = new TextEditingController();
-final TextEditingController email = new TextEditingController();
+final TextEditingController message = TextEditingController();
+final TextEditingController name = TextEditingController();
+final TextEditingController email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return    Container(
